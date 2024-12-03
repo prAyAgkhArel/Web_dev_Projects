@@ -1,0 +1,32 @@
+ol {
+  margin-left: -40px;
+  margin-top: -20px;
+  list-style-position: inside;
+}
+
+/* Write your CSS below, don't change the rules above. */
+
+/*element selector: selects all paragraph elements to turn its content red*/
+p {
+  color:red;
+}
+
+/*id selector: selects element with id set to id-selector-demo to turn its content to green*/
+#id-selector-demo {
+  color:green;
+}
+
+/*attribute selector: selecets li element with attribute value="4" and change its content to blue*/
+li[value="4"] {
+  color:blue;
+}
+
+/*class selector: selects all elements with class="note" and change their font size to 20px*/
+.note {
+  font-size: 20px;
+}
+
+/*all selector: selects all contents of html i.e selects all element to align its content to center*/
+* {
+  text-align: center;
+}
