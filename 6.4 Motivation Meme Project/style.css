@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+
+#main{
+    margin-left: 40%;
+    margin-top: 7%;
+}
+
+#branch{
+ margin-left: -10%;
+}
+
+img{
+    border: 5px solid white;
+    height:360px;
+}
+
+
+h1{
+    color:white;
+    font-family: Libre Baskerville;
+}
+
+p{
+    color:white;
+    padding-left: 10%;
+   
+}
