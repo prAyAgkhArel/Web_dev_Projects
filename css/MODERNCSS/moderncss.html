@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODERNCSS</title>
+    <style>
+
+
+        h1{
+            text-align:center;
+            text-transform:uppercase;
+            color:white;
+        }
+
+        .heading{
+            background:linear-gradient(to right, blue, red);
+            position:sticky;
+            top:0px;
+            z-index:1000;
+        }
+
+        :root{
+            --text:rgba(0, 0, 255, 0.779);
+        }
+
+        p{
+            color:var(--text);
+        }
+        .container{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:2rem;
+            margin-block:2rem;
+        }
+
+        .simplediv{
+            background-color:bisque;
+            padding:10px;
+            border-radius:5px;
+            margin-block:1.5rem;
+        }
+
+
+
+        .glass-card{
+            width:300px;
+            padding:25px;
+
+            background:rgba(255,255,255,.2);
+
+            backdrop-filter:blur(15px);
+            -webkit-backdrop-filter:blur(15px);
+
+            border:1px solid rgba(255,255,255,.3);
+            border-radius:15px;
+
+            box-shadow:0 10px 30px rgba(0,0,0,.2);
+        }
+
+        .box{
+            display:inline-block;
+            width:70px;
+            height:70px;
+            background:rgb(11, 11, 194);
+            clip-path:circle(50%);
+            margin-right:50px;
+        }
+
+        .box1{
+            display:inline-block;
+            width:70px;
+            height:70px;
+            background:rgb(11, 11, 194);
+            clip-path: ellipse(50% 30% at 50% 50%);
+            margin-right: 50px;
+        }
+        
+        .box2{
+            display:inline-block;
+            width:70px;
+            height:70px;
+            background:rgb(11, 11, 194);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Modern CSS</h1>
+    </div>
+
+    <h2>CSS Functions: clamp(), min(), max():</h2><hr>
+    <div class="container">
+         <div><p>clamp(min, preferred, max)</p></div>
+         <div>font-size: clamp(1rem, calc(2vw + 0.5rem), 2rem);
+             <br>
+             width: clamp(200px, 50%, 800px)
+         </div>
+         <div><p>min()</p></div>
+         <div>width: min(500px, 90%)<br>90% on small screens, 500px on large<br>
+        padding: min(5vw, 3rem); </div>
+         <div><p>max()</p></div>
+         <div>font-size: max(1rem, 2vw); i.e. At least 1 rem, grows with viewport</div>
+
+         <div><p>calc()</p></div>
+         <div>width: calc(100% - 2rem);<br>margin-left: calc(50%-300px);</div>
+    </div>
+    
+
+    <h2>Container Queries:</h2><hr>
+    <div class="container">
+        <div><p>Mark the container</p></div>
+        <div>.card-container{<br>container-type: inline-size;<br>
+        container-name: card; <br>}</div>
+        <div><p>Query It</p></div>
+        <div>@container(min-width:400px){<br>
+            .card{ display:grid; grid-template-columns: 1fr, 1fr; }<br>
+        }
+        </div>
+    </div>
+
+    <h2>CSS Nesting:</h2><hr>
+    <div class="simplediv">
+       .card{<br>
+           padding: 1rem;<br>
+           border-radius: 8px;<br>
+          <br>
+         .title{<br>
+            font-size: 1.25rem;<br>
+            font-weight: 700;}<br><br>
+            &:hover{  <br>
+              box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            }<br>
+            /*& refers to parent*/<br>
+
+       }
+    </div>
+
+
+    <h2>Logical Properties:</h2><hr>
+    <div class="container">
+        <div><p><u>Physical</u></p></div>
+        <div><P><u>Logical</u></P></div>
+        <div>margin-left</div>
+        <div>margin-inline-start</div>
+        <div>margin-right</div>
+        <div>margin-inline-end</div>
+        <div>padding-top</div>
+        <div>padding-block-start</div>
+        <div>padding-bottom</div>
+        <div>padding-block-end</div>
+        <div>width</div>
+        <div>inline-size</div>
+        <div>height</div>
+        <div>block-size</div>
+        <div>border-top</div>
+        <div>border-block-start</div>
+        <div>margin-left + margin-right</div>
+        <div>margin-inline</div>
+        <div>left:0; right:0;</div>
+        <div>inset-inline:0;</div>
+        <div>top+bottom</div>
+        <div>margin-block: 2rem;</div>
+    </div>
+
+    <h2>Scroll-behaviour and Scroll-Snap:</h2><hr>
+    <div class="simplediv">
+        /*Smooth scroll*/
+        <p>
+            html{ scroll-behavior: smooth; } <br>
+            
+        </p>
+        /*Scroll snap - snap to sections*/
+        <p>
+         .scroll-container{
+           overflow-y: scroll; <br>
+           scroll-snap-type: y mandatory;<br>
+           height: 100vh;
+         }
+        </p>
+
+        <p>
+            .section{
+                scroll-snap-align: start; /*start, center, end*/<br>
+                scroll-margin-top: 60px;        
+            }  /*offset for sticky header*/
+        </p>
+    </div>
+
+
+    <h2>backdrop-filter:</h2><hr>
+     <div class="glass-card">
+      Glass Card
+      <p>backdrop-filter:blur(8px);<br>
+    backdrop-filter: brightness(150%);<br>
+    backdrop-filter: contrast(80%);
+    backdrop-filter: grayscale(100%);
+      </p>
+     </div>
+
+    <h2>clip-path:</h2><hr>
+    <div class="simplediv">
+        <ul>
+            <li>clip-path: circle(50%);</li>
+            <li>clip-path: ellipse(50% 40% at 50% 50%);</li>
+            <li>clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);</li>
+            <li>clip-path: inset(10px 20px round 8px);</li>
+        </ul>
+        Animate it!
+
+        <p>
+            .shape{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); <br>
+                transition: clip-path 0.4s ease;
+            }<br><br>
+            .shape:hover{
+                clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+            }
+        </p>
+
+
+    </div>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <h2>@supports-Feature Detection:</h2><hr>
+     <div class="simplediv">
+        <p>
+            @supports (display:grid){
+                .layout { display:grid; }
+            } <br>
+
+            @supports not (backdrop-filter: blur(8px)){<br>
+            .glass{ background: rgba(0,0,0,0.8) }} <br>
+
+            @supports( container-type: inline-size){
+                /*container queries supported*/
+            }
+        </p>
+     </div>
+
+    <h2>@layer-Cascade Layers:</h2><hr>
+     <div class="simplediv">
+        /*Declare layer order*/<br>
+        @layer reset, base, components, utilities;
+        <p>
+            @layer reset<br> *{
+              margin:0;  padding:0; box-sizing:border-box;
+            } <br>
+            @layer components { .button { background: blue; } }<br>
+            @layer utilities { .mt-4{ margin-top: 1rem; } }
+        </p>
+     </div>
+
+    <h2>color-mix():</h2><hr>
+    <div class="simplediv">
+       /*Mix two colors*/ <br>
+       <ul>
+        <li>color: color-mix(in srgb, #6366f1 70%, white);</li>
+        <li>background: color-mix(in hsl, var(--primary) 80%, transparent);</li>
+       </ul>
+    </div>
+
+</body>
+</html>

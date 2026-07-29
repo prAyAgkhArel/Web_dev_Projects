@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        h1{
+            text-transform:uppercase;
+            
+            color:blue;
+            background-color:aquamarine;
+            text-decoration:underline;
+            text-underline-offset:5px;
+            text-align:center;
+            
+            /*transform: translateX(-50%);*/
+ 
+        }
+
+        .items{
+            list-style:none;
+           }
+
+        
+     .container{
+        background-color:silver;  
+     }
+        
+      li{
+        font-family:'Times New Roman', Times, serif;
+        background-color:rgb(24, 13, 147);
+        color:white;
+        margin:5px;
+        padding:10px 17px;
+        border-radius:20px;
+        list-style:none;
+      }
+
+    .items1,
+    .items2,
+    .items3,
+    .items4,
+    .items5,
+    .items6 {
+    display: flex;
+    
+   }
+
+        .items1{
+        flex-direction:row;
+        justify-content:space-around;
+        
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally
+        justify-content makes changes in the flex-direction
+        align-items makes changes in the opposite of flex-direction*/
+
+
+        flex-wrap:nowrap;
+        gap:50px;
+        
+       
+        }
+
+        .items2{
+        justify-content:center;
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally*/
+        flex-flow: row wrap;
+        /*short hand of flex direction and flex-wrap*/
+        gap:25px;
+        
+        }
+        
+        .items3{
+
+        flex-direction:row;
+        justify-content:space-between;
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally*/
+        flex-wrap:wrap-reverse;
+        }
+
+        .items4{
+
+        flex-direction:column;
+        
+        
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally*/
+        align-items:flex-start;
+
+        flex-wrap:nowrap;
+        }
+
+        .items5{
+
+        flex-direction:column;
+        justify-content:space-evenly;
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally*/
+        align-items:stretch;
+        /*stretch is the default value of align-items*/
+        flex-wrap:wrap;
+        
+
+        }
+        
+        .items6{
+
+        flex-direction:column;
+        justify-content:flex-end;
+        /*Values: flex-start, flext-end, center, space-between,
+        space-around, space-evenly*/
+        /*keeps flex items in center horizontally*/
+        align-items:center;
+        flex-wrap:wrap-reverse;
+
+        }
+
+        
+        /*horizontal center + vertical center*/
+        .center-everything{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        /*navbar with logo left, links right*/
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+         
+        /*equal width columns*/
+        .columns > * {
+            flex: 1;
+        }
+         
+        /*sidebar layout*/
+        .layout{
+            display:flex;
+        }
+
+        .sidebar{
+            flex: 0 0 250px;  /*fixed sidebar*/
+        }
+
+        .main{
+            flex: 1;  /*flexible main*/
+        }
+
+        bodyy{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+ 
+        footer{
+            margin-top: auto /*pushes to bottom, sticky footer*/
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>flexbox</h1>
+
+    <section class="first">
+        <div class="container">
+          <ul class="items1">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ul class="items2">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ul class="items3">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+
+    </section>
+
+    <section class="second">
+
+        <div class="container">
+          <ul class="items4">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ul class="items5">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+
+        <div class="container">
+          <ul class="items6">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+          </ul>
+        </div>
+    </section>
+
+<h2>OTHER FLEX ITEMS PROPERTIES:</h2>
+<P>
+    .flex-item{<br>
+        <b>order: 0;</b>  Reorder items without changing html<br>
+
+        <b>flex-grow: 0;</b>  How much to grow. 0=donot grow 1= grow to fill <br>
+        <b>flex-shrink: 1;</b> How much to shrink. 0=donot shrink <br>
+
+        <b>flex-basis: auto; </b>  Initial size before growing or shrinking <br>
+
+        <b>flex: 1; </b>  shorthand grow=1, shrink=1, basis=0<br>
+        <b>flex: 0 0 200px;</b> fixed size-won't grow or shrink<br>
+        <b>align-self: auto;</b>  Override parent's align-items for this item auto/flex-start/flex-end/stretch/baseline <br>
+
+    }
+</P>
+
+</body>
+</html>

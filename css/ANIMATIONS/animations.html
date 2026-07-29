@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        h1{
+            text-align:center;
+            text-transform:capitalize;
+            text-decoration-line:underline;
+            text-decoration-style:solid;
+            text-underline-offset:5px;
+        }
+
+        @keyframes fadeInUp {
+            from{
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /*Multiple stops*/
+        @keyframes colorCycle{
+            0% {background: #ef4444;}
+            33% {background: #6366f1;}
+            66% {background: #22c55e;}
+            100%{background: #ef4444;}
+                            }
+
+            @keyframes fadeInOut{
+                0%{
+                    opacity:0;
+                    transform:translateY(20px);
+                }
+
+                50%{
+                    opacity:1;
+                    transform:translateY(0);
+                }
+
+                100%{
+                    opacity:0;
+                    transform:translateY(20px);
+                    transform:scale(3);
+                }
+                                }
+
+            
+                @keyframes rotate{
+                from{
+                    transform: rotate(0deg);
+                }
+
+                to{
+                    transform: rotate(360deg);
+                }
+                                }
+
+
+
+        .element{
+            width:150px;
+            height:150px;
+            background:tomato;
+            color:white;
+            display:grid;
+            place-items:center;
+            
+            animation-name:fadeInUp;      /*@keyframes name*/
+            animation-duration: 0.1s;  /*how long one cycle takes*/
+            animation-timing-function:ease; /*speed curve*/
+            animation-delay: 0.2s; /*wait before starting animation*/
+            animation-iteration-count: infinite;/*1, number or infinite*/
+            animation-direction:normal;   /*normal|reverse|alternate|alternate-reverse*/
+            animation-fill-mode: both;  /*What state before/after: none|forwards|backwards|both*/
+            animation-play-state: running; /*running | paused*/
+
+            /*shorthand*/
+
+            animation: fadeInUp 0.5s ease 0.2s 1 normal both;
+
+            /*Multiple animations
+            animation: spin 1s linear infinite, pulse 2s ease infinite; 
+            */
+        
+            
+        }
+
+    .container{
+        display:grid;
+        place-items:center;
+    }
+
+    .element{
+        width:150px;
+        height:150px;
+        display:grid;
+        place-items:center;
+        background:tomato;
+        color:white;
+
+        animation:
+            fadeInUp 5s ease infinite,
+            colorcycle 3s linear infinite;
+    }
+
+    .ele{
+        width:150px;
+        height:150px;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        
+        color:white;
+
+        animation: colorCycle 3s linear infinite;
+        margin-top: 300px;
+        }
+
+
+
+
+
+        .circle{
+            position:relative;
+            top:150px;
+            height:50px;
+            width:50px;
+            background-color:green;
+            border-radius:50%;
+
+            animation:fadeInOut 3s ease infinite;
+        }
+
+        .square{
+            height:100px;
+            width:75px;
+            background-color:black;
+
+            animation:
+                      rotate 3s infinite;
+            
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animations</h1>
+
+    <h2>Animation Properties</h2>
+
+    <div class="container">
+        <div class="element">
+            Element
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="circle">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="ele">
+            Ele
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="square">
+
+        </div>
+    </div>
+</body>
+</html>

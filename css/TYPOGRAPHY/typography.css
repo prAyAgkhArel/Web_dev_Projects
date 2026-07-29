@@ -1,0 +1,127 @@
+html{
+    font-size: 62.5%;
+}
+/* font-size of 62.5% denotes 1rem = 10px
+h1 is always 2 rem values(px, pts, em, %, vw, vh, clamp())
+and h2 , h3 ...h6 are relative to h1*/
+
+h1{
+    font-size: 3rem; 
+    letter-spacing:1em;
+    word-spacing:normal;
+    text-transform:uppercase;
+
+}
+
+/* Now h1 is 30 px 
+uppercase, none, capitalize, lowecase, full-width
+default: none */
+
+h2{
+    font-weight:900;
+    letter-spacing:1em;
+    word-spacing:0.25em;
+}
+
+h3{
+    letter-spacing:1em;
+    word-spacing:0.25em;
+}
+
+h4{
+    text-align:center;
+}
+
+h5{
+    text-align:right;
+}
+
+h6{
+ text-decoration:underline;
+ text-decoration-style:dashed;
+ text-decoration-color:blue;
+ text-decoration-thickness: 3px;
+ text-underline-offset: 4px;
+ 
+}
+
+/* values: underline, none, line-through, overline
+dashed,solid, double, dotted, wavy
+offset means distance between text and underline */
+
+.first{
+    line-height:1.5;
+    font-family:cursive;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+/* 1.5 or 1.6 for body text and 1.1 or 1.2 for headings */
+
+
+/* multiple shadows */
+.second{
+    line-height:1.5;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 0 #000, 2px 2px 4px rggba(0,0,0,0.3);
+}
+
+/* glow effect */
+.third{
+    font-family:system-ui, sans-serif;
+    text-shadow: 0 0 10px #6366f1;
+}
+/* family_name values: serif, sans-serif, monospace, cursive, fantasy, system-ui *
+text-shadow: offset-x, offset-y blur-radius color
+/
+
+/* Whitespace controls text wrapping */
+
+.second{
+    white-space:nowrap;
+}
+
+/*default: normal 
+nowrap: text on one line
+pre: preserves wihitespace + newlines
+pre-wrap: preserves whitespace, allows wrapping
+pre-line: collapses whitespace, preserves newline  */
+
+.third{
+    overflow-wrap:anywhere;
+}
+/* 
+to wrap long words that overflow
+VALUES
+normal, break-word: break long URLs etc
+,anywhere */
+
+.fourth{
+    word-break:break-all;
+}
+/* 
+VALUES
+normal, break-all: break at any character
+keep-all: do not break */
+
+.truncate{
+    white-space: nowrap;
+    overflow:scroll;
+    text-overflow:ellipsis;
+    max-width: 300px;
+}
+
+/*     
+overflow values: hidden, visible, scroll, clip, auto
+This is a very long description that should be truncated with an ellipsis when it exceeds the available width.
+ */
+
+h6{
+    writing-mode:sideways-rl;
+}
+
+/* VALUES: horizontal-tb, vertical-rl, vertical-lr, sideways-rl, sideways-lr */
+
+h4{
+  direction: rtl;
+}
+
+/* rtl, ltr (left to right) */

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PseudoClasses</title>
+    <style>
+         .topic{
+            text-transform:capitalize;
+            text-align:center;
+            color:white;
+
+            background:linear-gradient(to right, rgb(0, 0, 255), rgb(255, 0, 0));
+            border-radius:8px;
+
+            position:sticky;
+            top:0;
+            z-index:1000;
+            
+            
+        }
+
+   
+
+        .container{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-top:25px;
+            gap:1.5rem;
+        }
+
+      :root{
+        --text: rgb(27, 27, 212);
+        --text1: rgba(255, 0, 0, 0.862);
+      }
+
+      p{
+        color:var(--text);
+      }
+
+      .two-columns p{
+        color:var(--text1)
+      }
+
+      .two-columns{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:1.5rem;
+      }
+
+      .centering{
+        display:grid;
+        place-items:center;
+        margin:50px;
+        
+      }
+
+
+    .hover-btn{
+    padding:10px 20px;
+    background:royalblue;
+    color:white;
+    border:none;
+    cursor:pointer;
+    }
+
+    input{
+        margin:20px;
+    }
+
+    .hover-btn:hover{
+            background:crimson;
+            transform:scale(1.1);
+        }
+
+    .input:focus{
+    outline:3px solid dodgerblue;
+   }
+
+   input:checked{
+    accent-color:green;
+    }
+
+    input:disabled{
+    background:lightgray;
+   }
+
+    input:required{
+        border:2px solid red;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="topic">
+        <h1>Pseudo Classes and Elements</h1>
+    </div>
+
+    <h2>Pseudo-Classes -State and Position:</h2>
+    <hr>
+
+    <div class="container">
+      <div><p>:hover</p></div>
+      <div>Mouse over element</div>
+      <div><p>:focus</p></div>
+      <div>Element has keyboard focus</div>
+      <div><p>:focus-visible</p></div>
+      <div>Focus visible(not mouse click)</div>
+      <div><p>:focus-within</p></div>
+      <div>Any child is focused</div>
+      <div><p>:active</p></div>
+      <div>Being Clicked</div>
+      <div><p>:visited</p></div>
+      <div>Visited link</div>
+      <div><p>:checked</p></div>
+      <div>Checked Input</div>
+      <div><p>:disabled</p></div>
+      <div>Disabled form element</div>
+      <div><p>:enabled</p></div>
+      <div>Enabled form element</div>
+      <div><p>:placeholder-shown</p></div>
+      <div>Input with visible placeholder</div>
+      <div><p>:required</p></div>
+      <div>Required input</div>
+      <div><p>:optional</p></div>
+      <div>Non-required input</div>
+      <div><p>:valid</p></div>
+      <div>Input with valid value</div>
+      <div><p>:invalid</p></div>
+      <div>Input with invalid value</div>
+      <div><p>:in-range</p></div>
+      <div>Number input within min/max</div>
+      <div><p>:out-of-range</p></div>
+      <div>Number input outside min/max</div>
+      <div><p>:read-only</p></div>
+      <div>Non-editable input</div>
+      <div><p>:read-write</p></div>
+      <div>Editable input</div>
+      <div><p>:empty</p></div>
+      <div>Element with no children</div>
+      <div><p>:root</p></div>
+      <div>Root element(html)</div>
+      <div><p>:first-child</p></div>
+      <div>First child of parent</div>
+      <div><p>:last-child</p></div>
+      <div>Last child of parent</div>
+      <div><p>:only-child</p></div>
+      <div>Only child of parent</div>
+      <div><p>:nth-child(n)</p></div>
+      <div>nth child(e.g. 2n+1=odd)</div>
+      <div><p>:last-of-type</p></div>
+      <div>last of element type</div>
+      <div><p>:nth-of-type(n)</p></div>
+      <div>nth of its type</div>
+      <div><p>:not(selector)</p></div>
+      <div>Does not match selector</div>
+      <div><p>:is(a,b,c)</p></div>
+      <div>matches any -lower specificity</div>
+      <div><p>:where(a,b)</p></div>
+      <div>Like :is() but zero specificity</div>
+      <div><p>:has(selector)</p></div>
+      <div>parent with matching child</div>
+      <div><p>:target</p></div>
+      <div>ID matches URL hash</div>
+      <div><p>:lang(code)</p></div>
+      <div>Language attribute match</div>
+      
+      
+    </div>
+
+    <div class="centering"><button class="hover-btn">Hover Me</button></div>
+
+
+ <h2>Pseudo Elements:</h2> <hr> 
+ 
+ <div class="two-columns">
+    <div><p>::before</p></div>
+    <div>Generated content BEFORE element's content</div>
+    <div><p>::after</p></div>
+    <div>Generated Content AFTER element's content</div>
+    <div><p>::first-line</p></div>
+    <div>First line of text block</div>
+    <div><p>::first-letter</p></div>
+    <div>First letter (drop caps)</div>
+    <div><p>::selection</p></div>
+    <div>User's selected text</div>
+    <div><p>::placeholder</p></div>
+    <div>Placeholder text in inputs</div>
+    <div><p>::marker</p></div>
+    <div>List item bullet/number</div>
+    <div><p>::file-selector-button</p></div>
+    <div>&ltinput type="file"&gt button</div>    
+    <div><p>::backdrop</p></div>
+    <div>Behind a &ltdialog&gt or fullscreen element</div>
+    <div><p>::spelling-error</p></div>
+    <div>Misspelled text(chrome)</div> 
+    <div><p>::grammar-error</p></div>
+    <div>Grammatical errors</div>
+
+ </div>
+
+<input class="input" type="text" placeholder="Click me then outline appears">
+<label>
+<input type="checkbox">
+Accept Terms appears green when checked
+</label>
+<input type="text" disabled value="Disabled Input">
+<input type="email" required placeholder="Email">
+
+</body>
+</html>

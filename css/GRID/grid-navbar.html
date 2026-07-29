@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+</head>
+<style>
+    .container{
+        display:grid;
+        width:vh;
+        height:4rem;
+        background-color:rgb(77, 77, 215);
+        border-radius:20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap:5rem;
+    }
+
+     .container div{
+        background-color:#4c0bda;
+        border-radius:20px;
+        padding:20px;
+
+    }
+
+    @media screen and (max-width: 1000px)
+        {
+        .container{
+           grid-template-columns: auto;
+        }
+    }
+
+     @media screen and (max-width: 700px)
+     {
+        .container{
+           grid-template-columns:auto;
+        }
+     }
+
+</style>
+<body>
+    <header>
+        <div class="container">
+
+            <div>Home</div>
+            <div>About</div>
+            <div>Service</div>
+            <div>Portfolio</div>
+            <div>Team</div>
+            <div>Contact</div>
+            <div>Options</div>
+
+        </div>
+
+
+    </header>
+</body>
+</html>

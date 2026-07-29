@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+</head>
+<style>
+    h1{
+        text-align:center;
+        text-transform:capitalize;
+        text-decoration-line:underline;
+        text-decoration-style:solid;
+        text-underline-offset:8px;
+        
+    }
+
+    p{
+        color:white;
+    }
+
+    .container{
+        width:100%;
+        padding:10px;
+        margin:10px;
+        border-radius:10px;
+        background-color:rgb(231, 166, 81);
+
+    }
+   
+    @media(min-width:640px){
+        .container{
+            background-color:lightblue;
+        }
+    }
+
+        @media(min-width:768px){
+        .container{
+            background-color:lightgreen;
+        }
+    }
+
+        @media(min-width:1024px){
+        .container{
+            background-color:lightyellow;
+        }
+    }
+
+    @media(min-width:1280px){
+        .container{
+            background-color:lightpink;
+        }
+    }
+
+    @media(min-width:1536px){
+        .container{
+            background-color:bisque;
+        }
+    }
+
+    .card-grid{
+        display:grid;
+        grid-template-columns: 1fr; /*Mobile:single column*/
+        gap: 1rem;
+       
+        height:50px;
+    }
+
+    .card{
+        display:inline-block;
+        width:50px;
+        height:50px;
+        background-color:rgb(75, 9, 176);
+        border-radius:5px;
+        color:white;
+        display:grid;
+        place-items:center;
+
+    }
+
+    @media(min-width: 640px){
+        .card-grid{
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+    }
+
+    @media(min-width:1024px){
+        .card-grid{
+            grid-template-columns: repeat(3, 1fr);
+           
+        }
+    }
+
+    @media(min-width: 1280px){
+        .card-grid{
+            grid-template-columns:repeat(4, 1fr);
+            
+        }
+    }
+
+    @media (prefers-color-scheme: dark){
+    :root{
+        --bg:#0f172a;
+        --text:#e2e8f0;
+    }
+
+    body{
+        background:var(--bg);
+        color:var(--text);
+    }
+}
+
+</style>
+<body>
+    <h1>
+       Media Queries
+    </h1>
+
+    <h2>Syntax:</h2>
+    <p>Notice the change in color when extending the browser width</p>
+    <div class="container">
+      <p>
+    /*@media [type] [feature]*/ 
+    </p>
+    <ul>
+        <br>
+        <li>@media screen and (min-width: 768px) {}</li>
+        <li>@media print{}</li>
+        <li>@media(max-width: 600px) {}</li>
+    </ul>
+      
+    </div>
+
+    <div class="container">
+      <p>
+    /*Multiple conditions*/
+    </p>
+    <ul>
+        <br>
+        <li> @media (min-width: 768px) and (max-width: 1024px) {} </li>
+        <li>@media(min-width: 600px), (orientation:landscape) {}</li>
+        <li> @media not screen {}</li>
+        <li> @media not (min-width: 768px){}</li>
+    </ul>
+     
+    </div>
+
+    <div class="container">
+      <p>
+    /*Modern less than 640px -> mobile phones*/
+    </p>
+        <ul>
+            <br>
+            <li>@media(min-width: 640px ){} /*sm small tablets and up*/ </li>
+            <li>@media(min-width: 768px ){} /*md  tablets and up*/</li>
+            <li>@media(min-width: 1024px ){} /*lg laptops and up*/</li>
+            <li>@media(min-width: 1280px ){} /*xl desktops*/</li>
+            <li>@media(min-width: 1536px ){} /*2xl  wide screens*/</li>
+        </ul>
+     
+    </div>
+
+        <div class="container">
+        <ul>
+            <br>
+            <li>@media(prefers-color-scheme: dark){ <br>
+                :root{--bg: #0f172a; --text: #e2e8f0;;
+                } <br>
+            } /*dark mode*/ </li> 
+        </ul>
+        </div>
+            <div class="container">
+            
+            <ul><li>@media(prefers-reduced-motion: reduce ){<br>
+            *{ <br>
+                animation:none !important; transition:none !important;
+            }<br>
+            } /*reduced motion*/</li></ul>
+            </div>
+
+            <div class="container">
+            <ul><li>@media(forced-colors: active ){} <br>
+                @media(prefers-contrast: more){}  /*High Contrast*/</li></ul>
+            </div>
+
+            <div class="container">
+            <ul>
+            <li>@media(pointer: coarse){} </li>
+            <li>@media(pointer: fine){} </li>
+            <li>@media(hover: hover){} </li>
+            <li>@media(hover: none){} </li>
+            </ul>
+            </div>
+
+            <div class="container">
+            <ul><li>@media <>nav, aside, .no-print{display:none;}<br>
+                body{font-size:12pt; color: black;} /*print*/</li></ul>
+            </div>
+
+            <div class="container">
+            <ul><li>@media(orientation: portrait){} <br>
+                @media(orientation: landscape){}
+            </li>
+            </ul>
+           </div>
+
+<div class="card-grid">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+</div>
+
+
+</body>
+</html>

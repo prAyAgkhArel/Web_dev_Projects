@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        h1{
+            
+            text-transform:uppercase;
+            text-align:center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            color:darkgreen;
+            background-color:rgb(243, 243, 204);
+        }
+
+        h2{
+            text-transform:uppercase;
+        }
+
+        .first{
+            background-color:blanchedalmond;
+            position:static;
+            /*default. Element follows normal flow 
+            top, left, right, bottom, z-index have no effect*/
+            width:200px;
+            left:60px;
+            /*left:60px doesnot work because it is static*/
+        } 
+
+        .second{
+            background-color:blanchedalmond;
+            position:relative;
+            width:100px;
+            left:200px;
+            top:1000px;
+            /*i.e 200px from left of its original place*/
+            /*stays in normal flow, but can be offset with top, left, right, bottom relative
+            to its original postion
+            creates stacking content*/
+        }   
+        
+        .third{
+            background-color:blanchedalmond;
+            position:absolute;
+            /*removed from flow. Positioned relative to nearest positioned ancestor
+            (non-static). If none, relative to viewport*/
+            left: 250px;  /*relative to viewport*/
+            width:200px;
+            margin:50px;
+            top: 350px;  /*relative to viewport*/
+
+            
+        }       
+
+        .fourth{
+            background-color:blanchedalmond;
+            position:sticky;
+            /*hybrid: behaves "relative" untill scroll threshold
+            then fixed. Great for table headers, section labels
+            left, right works but not top, bottom*/
+            width:200px;
+            left:80px;
+            z-index:100;
+            /*z-index high means it covers other items which comes in its place
+            if it is made low or negative it goes to background*/
+            }       
+
+        .fifth{
+            background-color:blanchedalmond;
+            position:fixed;
+            /*removed from the flow. Positioned relative to viewport-
+            stays during scroll. Navbars, banners*/
+            width:200px;
+            text-align:center;
+            left:250px;
+            top:200px;
+        }       
+    
+
+    </style>
+</head>
+<body>
+    <h1>
+        Positioning
+    </h1>
+
+    <h2>
+        position values
+    </h2>
+    <p><b>The position property takes an element out of (or keeps it in) the normal document flow.</b></p>
+
+    <div class="first">
+        <h3>class 'first' h3 , its position is static.</h3>
+    </div>
+
+    <div class="second">
+        <h3>class 'second' h3 , its position is relative.</h3>
+    </div>
+    
+    <div class="third">
+        <h3>class 'third' h3 , its position is absolute.
+            positioned relative to viewport.
+        </h3>
+    </div>
+
+    <div class="fourth">
+        <h3>class 'fourth' h3 , its position is sticky.</h3>
+    </div>
+
+    <div class="fifth">
+        <h3>class 'fifth' h3 , its position is fixed.
+            Scroll and see !! e.g yt navbar
+        </h3>
+    </div>
+
+
+</body>
+</html>

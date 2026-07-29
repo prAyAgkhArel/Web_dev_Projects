@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISPLAY</title>
+
+    <style>
+        .title{
+            text-align:center;
+            /* text-align:center will not work if text
+            is in inline-block beacuse after inline-block 
+            text only takes space of its width not
+            the entire block. So, here we kept h1 inside div
+            and aligned the div element in the center*/
+            border: 5px solid black;
+
+            /* Here border is applied in whole div */
+            
+        }
+        
+
+        h1{
+            display:inline-block;
+            /*Now every css in h1 is applied inside the inline-block
+            not the whole block
+            inline flows but repects width and height i.e width and height works*/
+            
+            height:50px;
+            width:200px;
+            text-transform:uppercase;
+            color:rgb(8, 236, 171);
+            background-color:rgb(88, 88, 120);
+            border-radius:20px;
+            text-decoration-line:underline;
+            text-decoration-style:wavy;
+            text-decoration-color:brown;
+            text-underline-offset: 7px;
+        
+
+            
+
+            /*here border is applied in inline-block content
+            i.e h1 */
+            }
+
+            .first{
+                margin-top:20px;
+                margin-bottom:20px;
+                padding:10px;
+                background-color:skyblue;
+                border:2px solid blue;
+                border-radius:20px;
+            }
+
+            .first p{
+                display:block;
+            /*takes one full block
+            starts on new line
+            div, p, h1-h6, section, article*/
+                white-space:pre-line;
+            }
+
+            article{
+                display:inline;
+                background-color:skyblue;
+                border:none;
+                
+                font-size:20px;
+                font-weight:900;
+                
+                
+            }
+
+
+        h2
+        {
+            display:inline;
+            /*flows with the text, no width/height
+            span, a, strong, em are inline elements*/
+            white-space:nowrap;
+        }
+        
+        ul{
+            background-color:bisque;
+            padding:20px;
+            border-radius:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>display</h1>
+    </div>
+
+    <div class="first">
+
+        <p>Voluptate eiusmod magna culpa dolore consequat laboris amet ipsum quis nisi esse velit veniam esse. Id dolore laborum culpa voluptate et nisi nostrud. Commodo qui laboris amet consectetur ut ea consequat dolore eiusmod aliqua veniam. Esse dolor eu sint elit esse ex nisi occaecat dolor officia. Sunt ea et ea id ex non laboris incididunt dolor. Exercitation aliqua officia dolor aliquip consectetur laboris. Ipsum est ex cupidatat veniam non sint anim cillum eiusmod enim nulla aute proident.</p>
+
+    </div>
+
+   
+    <article>
+        This is an article!!
+    </article>
+
+    <h2>
+        Aside of article is h2. 
+    </h2>
+    <p>
+        <i>-> because h2 and article both are inline, they take only the width equal to the width of content <br> inside them takes!</i>
+        <b><br>
+        Other display values can be: <ul>
+            <li>flex: flexible 1D layout-children becomes flex items</li>
+            <li>grid: Powerful 2D layout-row and column control</li>
+            <li>contents: Element's box disappears-children become direct children of parent</li>
+            <li>table/table-row/table-cell: stimulate table layout with non-table element</li>
+            <li>list-item: like block but adds list marker
+                used by  element &lt;li&gt;
+            </li>
+        </ul></b>
+
+    </p>
+    
+    <div>
+        <p><b>Visiblility vs display:none
+            <ul>
+               <li>display: none; <i>removed from layout- no space reserved</i></li>
+               <li>visibility: hidden; <i>invisible but space is preserved</i></li>
+               <li>opacity: 0 ; <i>invisible but interactable</i></li>
+            </ul>
+      </b></p>
+    </div>
+
+
+    
+</body>
+</html>

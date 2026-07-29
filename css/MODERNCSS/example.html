@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modern CSS Demo</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#74ebd5,#9face6);
+    padding:20px;
+    min-height:100vh;
+}
+
+header{
+    position:sticky;
+    top:0;
+    background:#1f2937;
+    color:white;
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+}
+
+section{
+    margin-block:50px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+.demo{
+    margin-top:15px;
+}
+
+button{
+    padding:10px 20px;
+}
+
+
+
+
+
+
+
+
+
+/* clamp */
+
+.clamp{
+    font-size:clamp(18px,3vw,40px);
+}
+
+
+
+
+/* min */
+
+.min-box{
+    width:min(500px,90%);
+    background:royalblue;
+    color:white;
+    padding:20px;
+}
+
+
+
+
+/* max */
+
+.max-text{
+    font-size:max(1rem,2vw);
+}
+
+
+
+
+/* calc */
+
+.calc-box{
+    width:calc(100% - 100px);
+    background:orange;
+    padding:15px;
+}
+
+
+
+
+
+/* Container Query */
+
+.container-demo{
+    container-type:inline-size;
+    border:2px solid royalblue;
+    padding:10px;
+    resize:horizontal;
+    overflow:auto;
+    width:300px;
+}
+
+.card{
+    display:flex;
+    gap:10px;
+}
+
+.card div{
+    background:#ddd;
+    padding:15px;
+    flex:1;
+}
+
+@container (max-width:400px){
+
+.card{
+    flex-direction:column;
+}
+
+}
+
+
+
+
+
+/* Logical Properties */
+
+.logical{
+
+    margin-inline:auto;
+    inline-size:250px;
+
+    padding-block:20px;
+
+    background:tomato;
+    color:white;
+    text-align:center;
+
+}
+
+
+
+
+
+/* Glass */
+
+.glass{
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:12px;
+
+    padding:25px;
+
+}
+
+
+
+
+
+/* Clip Path */
+
+.clip{
+
+    width:150px;
+    height:150px;
+
+    background:crimson;
+
+    clip-path:circle(50%);
+
+    transition:.4s;
+
+}
+
+.clip:hover{
+
+    clip-path:polygon(50% 0%,100% 100%,0% 100%);
+
+}
+
+
+
+
+
+/* color-mix */
+
+.mix{
+
+    background:color-mix(in srgb, royalblue 60%, crimson);
+
+    color:white;
+
+    padding:20px;
+
+}
+
+
+
+
+
+/* Aspect Ratio */
+
+.aspect{
+
+    aspect-ratio:16/9;
+
+    width:300px;
+
+    background:green;
+
+}
+
+
+
+
+
+/* Object Fit */
+
+.photo{
+
+    width:300px;
+
+    height:200px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* Accent Color */
+
+input[type=checkbox]{
+
+    accent-color:crimson;
+
+}
+
+
+
+
+
+/* :has */
+
+.parent{
+
+    border:3px solid gray;
+
+    padding:15px;
+
+}
+
+.parent:has(img){
+
+    border-color:green;
+
+}
+
+
+
+
+
+/* :is */
+
+:is(h3,h4){
+
+    color:royalblue;
+
+}
+
+
+
+
+
+/* text-wrap */
+
+.balance{
+
+    width:300px;
+
+    text-wrap:balance;
+
+}
+
+
+
+
+
+/* focus-visible */
+
+button:focus-visible{
+
+    outline:4px solid orange;
+
+}
+
+
+
+
+
+
+/* Scroll Snap */
+
+.snap{
+
+    height:250px;
+
+    overflow-y:scroll;
+
+    scroll-snap-type:y mandatory;
+
+}
+
+.page{
+
+    height:250px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    scroll-snap-align:start;
+
+}
+
+.one{background:#ffd166;}
+.two{background:#06d6a0;}
+.three{background:#118ab2;color:white;}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Modern CSS Examples</h1>
+
+</header>
+
+<section>
+
+<h2>clamp()</h2>
+
+<p class="clamp">
+
+Resize the browser to see my font size change.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>min()</h2>
+
+<div class="min-box">
+
+Width = min(500px,90%)
+
+</div>
+
+</section>
+
+<section>
+
+<h2>max()</h2>
+
+<p class="max-text">
+
+Resize the browser.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>calc()</h2>
+
+<div class="calc-box">
+
+Width = calc(100% - 100px)
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Container Query</h2>
+
+<p>Drag the bottom-right corner of the container.</p>
+
+<div class="container-demo">
+
+<div class="card">
+
+<div>Card 1</div>
+
+<div>Card 2</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Logical Properties</h2>
+
+<div class="logical">
+
+margin-inline & inline-size
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Glassmorphism (backdrop-filter)</h2>
+
+<div class="glass">
+
+<h3>Glass Card</h3>
+
+<p>The background behind this card is blurred.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>clip-path</h2>
+
+<div class="clip"></div>
+
+<p>Hover the shape.</p>
+
+</section>
+
+<section>
+
+<h2>@supports</h2>
+
+<p>
+
+Open DevTools and inspect the CSS.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>color-mix()</h2>
+
+<div class="mix">
+
+Mixed Background
+
+</div>
+
+</section>
+
+<section>
+
+<h2>aspect-ratio</h2>
+
+<div class="aspect"></div>
+
+</section>
+
+<section>
+
+<h2>object-fit</h2>
+
+<img class="photo"
+
+src="https://picsum.photos/600/400"
+
+alt="Random">
+
+</section>
+
+<section>
+
+<h2>accent-color</h2>
+
+<label>
+
+<input type="checkbox">
+
+Check me
+
+</label>
+
+</section>
+
+<section>
+
+<h2>:has()</h2>
+
+<div class="parent">
+
+<img src="https://picsum.photos/100"
+
+alt="">
+
+<p>This parent has an image.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>:is()</h2>
+
+<h3>Heading 3</h3>
+
+<h4>Heading 4</h4>
+
+</section>
+
+<section>
+
+<h2>text-wrap: balance</h2>
+
+<p class="balance">
+
+This heading-like sentence wraps more evenly across multiple lines.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>:focus-visible</h2>
+
+<button>
+
+Press TAB to focus me
+
+</button>
+
+</section>
+
+<section>
+
+<h2>Scroll Snap</h2>
+
+<div class="snap">
+
+<div class="page one">Page 1</div>
+
+<div class="page two">Page 2</div>
+
+<div class="page three">Page 3</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

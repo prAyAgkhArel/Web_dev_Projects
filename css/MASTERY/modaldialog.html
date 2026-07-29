@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Dialog</title>
+    <style>
+        
+      .modal-overlay{
+        position:fixed;
+        inset:0;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(4px);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        z-index:50;
+      }
+
+      .modal{
+        background:#fff;
+        border-radius: 16px;
+        padding: 2rem;
+        width: min(90%, 480px);
+        position:relative;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+        animation: slideup 0.3s ease;
+      }
+
+      @keyframes slideup{
+
+        from{opacity:0; transform:translateY(20px);}
+        to{opacity:1; transform:translateY(0);}
+
+      }
+
+      .modal-close{
+        position:absolute;
+        top: 1rem;
+        right: 1rem;
+        background:none;
+        border:none;
+        cursor:pointer;
+        color:#94a3b8;
+        font-size: 1rem;
+        padding:4px;
+        border-radius:4px;
+        transition: color 0.2s;
+      }
+
+      modal-header h2{
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0 0 1rem;
+      }
+
+      .modal-close:hover{color:#1e293b;}
+
+      .modal-body p{
+        color:#475569;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .modal-footer{
+        display:flex;
+        gap:0.75rem;
+        justify-content:flex-end;
+        margin-top: 1.5rem;
+      }
+
+      .btn-ghost{
+        background:none;
+        border:1px solid #e2e8f0;
+        color: #475569;
+        padding: 0.6rem 1.25rem;
+        border-radius: 8px;
+        cursor:pointer;
+        font-weight:500;
+        transition: all 0.2s;
+      }
+
+      .btn-ghost:hover{
+        background:#f8fafc;
+      }
+
+      .btn-danger{
+        background:#ef4444;
+        border:none;
+        color: #fff;
+        padding: 0.6rem 1.25rem;
+        border-radius: 8px;
+        cursor:pointer;
+        font-weight:600;
+        transition: background 0.2s;
+      }
+
+    .btn-danger:hover{
+        background:#dc2626;
+      }
+
+    </style>
+</head>
+
+<body>
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">✖</button>
+            <div class="modal-header">
+                <h2>Confirm Action</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure want to delete this item?
+                    This action cannot be undone.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-ghost">Cancel</button>
+                <button class="btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

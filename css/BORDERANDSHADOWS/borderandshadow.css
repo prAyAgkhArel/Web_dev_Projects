@@ -1,0 +1,127 @@
+
+
+
+/* padding: 1rem; (for all sides)
+padding:1rem 2rem; (top/bottom, left/right)
+padding: 1rem 2rem 3rem;(top , left/right , bottom) 
+padding: 1rem 2rem 3rem 1.5rem; (top right bottom left)
+same for margin too
+negative margin values pulls element toward neighbours
+margine collapse-> adjacent vertical margins merge into largest one*/
+
+h1{
+    text-align:center;
+    text-transform:uppercase;
+    text-decoration-line:underline;
+    text-underline-offset: 5px;
+    text-decoration-color:rgb(196, 104, 6);
+    text-decoration-style:wavy;
+    padding:1rem;
+    background:linear-gradient(to right, rgb(169, 7, 42), rgb(6, 19, 138));
+    border: 5px groove black;
+
+}
+
+header{
+    padding:20px;
+    background-color:rgb(206, 235, 14);
+    border: 3px double black;
+    border-radius:3%;
+    /* gives circular effect
+    VALUES(8px(all corners), 50%(circle or oval), 4px 12px(TL+BR or TR+BL)) 
+    for elliptical corners border-radius: 50% or 25% */
+    
+}
+
+footer{
+    padding:5px;
+    background-color:rgb(206, 235, 14);
+    border: 3px dotted black;
+    border-radius:3%;
+}
+
+#first{
+    border: 2px solid #6366f1;
+    padding: 5px;
+    margin: 20px;
+}
+
+#second{
+    padding:5px;
+    margin: 20px;
+    border-top: 3px solid #ef4444;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 3px solid #6366f1;
+    border-left: 4px solid #22c552;
+}
+
+#third{
+     border-width: 5px 3px 5px 3px;
+     border-style: dashed;
+     /* VALUES(solid, dashed, dotted, double, groove, ridge, inset, outset) */
+     border-color: #6366f1 transparent;
+     margin-bottom: 5px;
+     margin: 20px;
+     padding: 5px;
+}
+
+#fourth{
+    border-style: inset;
+    border-color:black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 0;
+    margin:20px;
+    padding:5px;
+}
+
+.outline{
+    outline: 2px outset #6266f1;
+    outline-offset: 3px;
+}
+
+:focus-visible{
+    outline: 2px outset #6266f1;
+    outline-offset: 3px;
+}
+
+.box-shadow{
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);  i.e colored shadow
+    box-shadow: none */
+    padding: 5px;
+    margin: 20px;
+    width:min-content; 
+    /* smallest possible content width in box model */
+
+}
+
+.box-shadow2{
+    box-shadow: inset 0 5px 5px rgba(0,0,0,0.3);
+    padding:5px;
+    margin:20px;
+    border-radius:20px;
+    width:max-content;
+    /* largest possible width without wrapping
+    recommended range of width in px(min-width:200px;, max-width:1200px;) */
+}
+
+.box-shadow3{
+    box-shadow:  0 5px 5px rgba(106, 196, 9, 0.3);
+    padding:5px;
+    margin:20px;
+    border-radius:20px;
+    width:fit-content;
+}
+
+.container{
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;      
+    /* center horizontally */
+    /* Side gutters */
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 3px rgb(6, 19, 138)
+
+}

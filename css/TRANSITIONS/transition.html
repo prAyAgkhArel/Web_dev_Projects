@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASITION</title>
+    <style>
+
+        h1{
+            text-transform:uppercase;
+            text-align:center;
+            text-decoration-line:underline;
+            
+        }
+
+       button{
+        border:none;
+        padding:0;
+        background:none;
+        margin:20px;
+       }
+    
+
+.button{
+    display:inline-block;
+    background-color:lightblue;
+    padding:0.75rem 1.5rem;
+    border-radius:5px;
+    color:white;
+    margin:20px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+
+.button:hover{
+    background-color: blue;
+    transform: translateY(300px);
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+.button-linear{
+    transition: transform .5s linear;
+
+}
+
+.button-ease{
+    transition: transform .5s ease;
+}
+
+.button-easein{
+    transition: transform .5s ease-in;
+}
+
+.button-easeout{
+    transition: transform .5s ease-out;
+}
+
+.button-bezier{
+    transition: transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+
+.button-steps{
+    transition: transform .5s steps(4,end);
+}
+
+.button-linear:hover,
+.button-ease:hover,
+.button-easein:hover,
+.button-easeout:hover,
+.button-bezier:hover,
+.button-steps:hover{
+    
+    
+    cursor:pointer;
+    transform:translateY(300px);
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+       
+ </style>
+</head>
+<body>
+    <h1>Transition</h1>
+    <hr>
+
+    <h2>Transition Properties:</h2>
+
+    <div class="button">
+        <button>Click Me</button>
+    </div>
+
+    
+    <div class="button button-linear">
+    <button>Linear</button>
+</div>
+
+<div class="button button-ease">
+    <button>Ease</button>
+</div>
+
+<div class="button button-easein">
+    <button>Ease In</button>
+</div>
+
+<div class="button button-easeout">
+    <button>Ease Out</button>
+</div>
+
+<div class="button button-bezier">
+    <button>Bezier</button>
+</div>
+
+<div class="button button-steps">
+    <button>Steps</button>
+</div>
+</body>
+</html>

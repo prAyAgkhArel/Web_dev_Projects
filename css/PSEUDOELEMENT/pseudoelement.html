@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSEUDO ELEMENT</title>
+    <style>
+
+
+        button{
+            display:flex;
+            border-radius:20px;
+            align-items:center;
+            justify-content:center;
+            margin-left:50px;
+            margin-top:5px;
+        }
+
+        button:hover{
+            cursor:pointer;
+        }
+
+        
+        .container form{
+            
+            
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;   /* Centers inputs horizontally */
+            padding-top: 10px;
+            position: relative;
+        }
+
+        .container form::after {
+            content: "X";
+            position: absolute;
+
+            top: 1px;
+            right: 10px;
+
+            width: 20px;
+            height: 20px;
+            background: red;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+       .container input {
+        
+            display: block;
+            width: 160px;
+            padding: 10px;
+            border-radius: 20px;
+            margin: 10px auto;   /* auto left/right centers the input */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+          <input  type="text" placeholder="Enter username">
+          <input  type="password" placeholder="Enter password">
+          <button>
+            Submit
+         </button>
+        </form>
+
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+h1{
+    text-align:center;
+    text-decoration-line:underline;
+    text-decoration-color:darkgoldenrod;
+    text-decoration-style:wavy;
+    text-underline-offset:5px;
+    letter-spacing:1rem;
+    text-transform:uppercase;
+    
+}
+
+h2{
+    text-align:left;
+    text-decoration-line:underline;
+    text-underline-offset:5px;
+    letter-spacing:0.25rem;
+}
+
+
+
+/* background-color, background-image, background-size, 
+background-position, bacground-repeat, background-attachment,
+background-origin, background-clip, background */
+
+.attribute{
+    background-color:bisque; 
+    /* values: transparent, currentColor */
+}
+
+.background{
+    background-image:url('/device.avif');
+    background-size:contain;
+    /* VALUES( auto, cover(fills area), contain(fills fully), <length>, <percentage> ) */
+    background-position: center;
+    /* VALUES( top left, 50% 50%(same as center), 20px 30px(from top left), right 10px bottom 20px) */
+    background-repeat:repeat;
+    /* VALUES(repeat, no-repeat, repeat-x, repeat-y, space, round) */
+    background-attachment:fixed;
+    /* VALUES(scroll(moves with element), fixed(stays fixed on viewport), local(stays with element's content) */
+    background-origin: border-box;  
+    /* where background positioning start 
+    VALUES(padding-box, border-box, content-box)*/
+    background-clip: border-box;
+    /* where background is painted */
+    padding:50px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.img p{
+    text-decoration-color:aliceblue;
+}
+
+
+
+header{
+  background:linear-gradient(to right, #6366f1, #ec4899)
+}
+
+.circular{
+    background:radial-gradient(circle, #6366f1, #1e293b);
+}
+
+footer{
+  background:linear-gradient(to right, #6366f1, #ec4899)
+
+}
+
+
+
+/* background: linear-gradient(135deg, #6366f1, #ec4899) no-repeat center/cover;,
+ background: radial-gradient(ellipse at top, color1, color2);
+background: conic-gradient(from 0deg, red, yellow, green, red);
+background: repeating-linear-gradient(45deg, red 0px, yellow 10px, transparent 10px, transparent 20px); */

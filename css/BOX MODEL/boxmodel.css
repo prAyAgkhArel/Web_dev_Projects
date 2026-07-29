@@ -1,0 +1,46 @@
+h1{
+    /* text-align:center; */
+    text-align:center;
+    text-transform:uppercase;
+    text-decoration-line:underline;
+    text-decoration-style:solid;
+    letter-spacing:0.5rem;
+    text-underline-offset:5px;
+    text-decoration-color:blue;
+    text-shadow:1px 2px 0 black;
+}
+
+
+.box{
+    background-color:burlywood;
+    /* width:auto; */
+    /* shrinks to contents or expands to fill */
+    width:200px;
+    
+    width:50%;
+    width:100%;
+    width:fit-content; 
+    /* shrinks to content i.e takes space of content */
+    width:max-content;
+    /* largest possible without wrapping */
+    width:min-content;
+    /* smallest possible width */
+    min-width:200px;
+    max-width:1200px;
+    /* this means never narrower than 200px and wider than 1200px */
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 1rem;
+    
+
+}
+
+.container{
+    background-color:rgb(99, 99, 222);
+    width:50%;
+    max-width:1200px;
+    margin:0 auto;
+    /* centers horizontally */
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+}

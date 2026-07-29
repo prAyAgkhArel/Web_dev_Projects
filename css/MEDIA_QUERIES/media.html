@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Queries</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: capitalize;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background: lightblue;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Mobile first: default styles apply to small screens */
+    .box {
+      background: lightcoral;
+    }
+
+    /* Small tablets and up */
+    @media (min-width: 640px) {
+      .box {
+        background: lightgreen;
+      }
+    }
+
+    /* Tablets and up */
+    @media (min-width: 768px) {
+      .box {
+        background: lightblue;
+      }
+    }
+
+    /* Laptops and up */
+    @media (min-width: 1024px) {
+      .box {
+        background: khaki;
+      }
+    }
+
+    /* Desktops */
+    @media (min-width: 1280px) {
+      .box {
+        background: plum;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        color: black;
+        background: white;
+      }
+    }
+
+    /* Multiple conditions */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      h2 {
+        color: darkblue;
+      }
+    }
+
+    /* OR condition */
+    @media (min-width: 600px), (orientation: landscape) {
+      p {
+        font-style: italic;
+      }
+    }
+
+    /* NOT condition */
+    @media not screen {
+      body {
+        background: yellow;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Media Queries</h1>
+
+  <div class="box">
+    Resize the browser window to see the background color change.
+  </div>
+
+  <h2>Syntax examples</h2>
+  <p>Open developer tools and test different screen widths.</p>
+</body>
+</html>

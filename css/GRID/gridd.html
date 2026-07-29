@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+    <style>
+        h1{
+            text-transform:uppercase;
+            text-align:center;
+            text-decoration:underline;
+            text-decoration-style:dashed;
+        }
+/*------------------------------GRID FUNDAMENTALS----------------------------------*/
+
+        .container{
+            
+            height:40vh;
+            display:grid;
+            background-color:bisque;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px auto 60px;
+            gap:5px 10px;
+            outline: solid black 5px;
+            margin:5px;
+            margin-bottom:25px;
+            
+        }
+
+    .container div{
+        margin:2px;
+    }
+
+      .one{
+        background-color:blue;
+        color:white;
+        
+      }
+
+      .six{
+        background-color:blue;
+        color:white;
+      }
+
+      .eleven{
+        background-color:blue;
+        color:white;
+      }
+
+      .one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten,.eleven,.twelve{
+        display:grid;
+        place-items:center;
+      }
+
+      
+/*------------------------------NAMED TEMPLATE AREAS----------------------------------*/
+        .grid-container{
+            display:grid;
+            height:50vh;
+            grid-template-columns: 200px 1fr;
+            /*maximum number of columns*/
+            grid-template-rows: 60px 1fr 50px;
+            /*maximum number or rows*/
+            grid-template-areas:"header header"
+                                "sidebar main"
+                                "footer footer";
+            /*here the first row contains header and header columns
+            of 200px and 1fr
+            second row contains sidebar and main of horizontal size of 200px and 1fr
+            third row contains footer and footer of 200px and 1fr horizontal size
+            The vertical size of each div in a row is 60px 1fr and 50px respectively:
+            Here, 1fr means 1 part of size occupied by total number of rows
+            */
+
+            gap:1rem;
+            margin-top:20px;
+            /* 1) justify-items: start |end | center| stretch;
+            horizontal in cell
+            2) align-items: start|end|center|stretch;
+            vertical in cell
+            3) place-items: center 
+            shorthand for align-items and justify-items
+            4) align-content: same as above;
+            5) justify-content: start|end|center|stretch|
+            |space-between|space-around|space-evenly;
+            6) place-content: center space-between;
+            */
+
+            margin-bottom:25px;
+
+        } 
+         
+        .header{
+        grid-area:header;
+        background-color:rgba(9, 9, 238, 0.696);
+        border-radius:5px; 
+        color:white;
+        /*justify-self:center;
+        align-self:end;
+        place-self:center;
+        individual cell override*/
+    }
+        .sidebar{
+        grid-area:sidebar;
+        background-color:rgba(226, 9, 238, 0.859);
+        border-radius:5px;
+        color:white; 
+    }
+        .main{
+        grid-area:main;
+        background-color:rgba(21, 216, 206, 0.799);
+        border-radius:5px; 
+        color:white;  
+    }
+        .footer{
+        grid-area:footer;
+        background-color:rgb(9, 238, 135);
+        border-radius:5px;
+        color:white;   
+    }
+
+    .header,
+    .sidebar,
+    .main,
+    .footer{
+        display: grid;
+        place-items: center;
+    }
+/*------------------------------PLACEMENT IN GRID----------------------------------*/
+
+
+    .grid-placing{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .gp1,.gp2,.gp3,.gp4{
+        display:grid;
+        place-items:center;
+    }
+    
+    .gp1{
+        background-color:brown;
+        grid-row: 1/3;  /*from row 1 to 3 (i.e spans 2 rows)*/
+    }
+
+    .gp2{
+        background-color:rgba(165, 42, 42, 0.732);
+        grid-column: 1/-1;   /*takes full width*/
+    }
+
+    .gp3{
+        background-color:rgba(165, 42, 42, 0.525);
+        grid-column: 1/3;  /*spans 2 column from current position*/
+    }
+
+    .gp4{
+        background-color:rgba(165, 42, 42, 0.212);
+        grid-column: span 2; /*spans two columns*/
+        
+    }
+
+    /*grid-area:1/1/3/4;   This is a short hand |row-start|col-start|row-end|col-end|
+      grid-column: 1/-1;  This takes full horizontal width
+      grid-row: 1/-1; This takes full vertical width
+    */
+
+
+/*------------------------------GRID AUTOFLOW AND IMPLICIT GRID----------------------------------*/
+
+    .grid-autoflow{
+        margin-top:25px;
+        display:grid;
+     /*   grid-template-columns:1fr 1fr;
+        grid-template-rows:50px 50px; */
+        grid-auto-flow: row;   /* (default) places items row by row
+        VALUES:
+        column(places items column by column);
+        dense(fills gaps with later items)
+        */
+        grid-auto-rows: 100px;  /*Each auto created row is 100px
+        This will also do the work of grid-auto-flow but for rows*/
+
+        grid-auto-rows: minmax(100px, auto); /*at least 100px, grows if needed*/
+
+        
+    }
+
+    .ga1,.ga2,.ga3,.ga4{
+        display:grid;
+        place-items:center;
+        
+    }
+
+    .ga1{
+        background-color:darkgoldenrod;
+    }
+
+    .ga2{
+        background-color:rgba(184, 135, 11, 0.788);
+    }
+
+    .ga3{
+        background-color:rgba(184, 135, 11, 0.514);
+    }
+
+    .ga4{
+        background-color:rgba(184, 135, 11, 0.345);
+    }
+    
+/*------------------------------GRID-RESPONSIVE----------------------------------*/
+
+.grid-responsive{
+    margin-top:25px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    /*auto-fit: collapses empty tracks ..see difference by changing the viewport
+    auto-fill: keeps empty tracks(maintains gap)..i.e doesnot change maximum size
+    minimax(min,max): column between 200px and 1fr*/
+    gap:1rem;
+    grid-template-columns:minmax(200px, 1fr) 2fr;
+    /*gives two columns of first column minsize=200px and second column of size 2fr*/
+   /* grid-template-columns: repeat(4, 1fr);*/ /*fixed repeat*/
+    /*grid-template-columns: repeat(4, 1fr 2fr);*/ /*alternate repeat*/
+}
+
+.gr1,.gr2,.gr3,.gr4{
+    display:grid;
+    place-items:center;
+   
+}
+
+.gr1{
+    background-color:rgba(76, 0, 130, 0.568);
+}
+
+.gr2{
+    background-color:rgba(76, 0, 130, 0.393);
+}
+
+.gr3{
+    background-color:rgba(76, 0, 130, 0.24);
+}
+
+.gr4{
+    background-color:rgba(76, 0, 130, 0.122);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <h1>GRid</h1>
+
+    <div class="container">
+        <div class="one"><b>(1,1)</b></div>
+        <div class="two"><b>(1,2)</b></div>
+        <div class="three"><b>(1,3)</b></div>
+        <div class="four"><b>(1,4)</b></div>
+        <div class="five"><b>(2,1)</b></div>
+        <div class="six"><b>(2,2)</b></div>
+        <div class="seven"><b>(2,3)</b></div>
+        <div class="eight"><b>(2,4)</b></div>
+        <div class="nine"><b>(3,1)</b></div>
+        <div class="ten"><b>(3,2)</b></div>
+        <div class="eleven"><b>(3,3)</b></div>
+        <div class="twelve"><b>(3,4)</b></div>
+    </div>
+
+    <hr>
+
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main</div>
+        <div class="footer">Footer</div>
+
+        
+    </div>
+    
+    <hr>
+
+    <div class="grid-placing">
+
+        <div class="gp1">gp1</div>
+        <div class="gp2">gp2</div>
+        <div class="gp3">gp3</div>
+        <div class="gp4">gp4</div>
+
+    </div>
+
+    <hr>
+
+    <div class="grid-autoflow">
+
+        <div class="ga1">ga1</div>
+        <div class="ga2">ga2</div>
+        <div class="ga3">ga3</div>
+        <div class="ga4">ga4</div>
+
+    </div>
+
+      <hr>
+
+    <div class="grid-responsive">
+
+        <div class="gr1">gr1</div>
+        <div class="gr2">gr2</div>
+        <div class="gr3">gr3</div>
+        <div class="gr4">gr4</div>
+        <div class="gr4">gr5</div>
+
+    </div>
+    
+</body>
+</html>

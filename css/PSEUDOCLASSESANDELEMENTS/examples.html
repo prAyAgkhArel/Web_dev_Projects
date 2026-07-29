@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo Classes & Elements Demo</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    padding:20px;
+}
+
+.topic{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    text-align:center;
+    color:white;
+    padding:15px;
+    margin-bottom:25px;
+
+    background:linear-gradient(to right,royalblue,crimson);
+    border-radius:10px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+.card h2{
+    color:royalblue;
+    margin-bottom:15px;
+}
+
+.demo{
+    margin-top:15px;
+}
+
+button,input{
+    padding:10px;
+    margin:8px 0;
+}
+
+
+
+
+
+
+/* Hover */
+
+.hover-btn{
+    background:royalblue;
+    color:white;
+    border:none;
+    transition:.3s;
+}
+
+.hover-btn:hover{
+    background:crimson;
+    transform:scale(1.1);
+}
+
+
+
+
+/* Active */
+
+.active-btn{
+    background:green;
+    color:white;
+    border:none;
+}
+
+.active-btn:active{
+    transform:scale(.9);
+}
+
+
+
+
+/* Focus */
+
+.focus-input:focus{
+    outline:3px solid royalblue;
+}
+
+
+
+
+/* Checked */
+
+.check:checked{
+    accent-color:green;
+}
+
+
+
+
+/* Disabled */
+
+.disable{
+    background:#ddd;
+}
+
+.disable:disabled{
+    color:red;
+}
+
+
+
+
+/* Valid Invalid */
+
+.email:valid{
+    border:3px solid green;
+}
+
+.email:invalid{
+    border:3px solid red;
+}
+
+
+
+
+/* Required */
+
+.req:required{
+    border:3px solid orange;
+}
+
+
+
+
+/* nth-child */
+
+.list li:nth-child(odd){
+    background:skyblue;
+}
+
+.list li{
+    padding:5px;
+}
+
+
+
+
+/* Target */
+
+#target{
+    margin-top:15px;
+    padding:15px;
+    background:#ddd;
+}
+
+#target:target{
+    background:yellow;
+}
+
+
+
+
+/* Before */
+
+.before::before{
+    content:"★ ";
+    color:gold;
+    font-size:22px;
+}
+
+
+
+
+/* After */
+
+.after::after{
+    content:" ✔";
+    color:green;
+}
+
+
+
+
+/* First Letter */
+
+.first-letter::first-letter{
+    font-size:40px;
+    color:red;
+    font-weight:bold;
+}
+
+
+
+
+/* First Line */
+
+.first-line{
+    width:300px;
+}
+
+.first-line::first-line{
+    color:blue;
+    font-weight:bold;
+}
+
+
+
+
+/* Selection */
+
+.selection::selection{
+    background:black;
+    color:white;
+}
+
+
+
+
+/* Placeholder */
+
+.place::placeholder{
+    color:purple;
+    font-style:italic;
+}
+
+
+
+
+/* Marker */
+
+.marker li::marker{
+    color:red;
+    font-size:25px;
+}
+
+
+
+
+/* File Selector Button */
+
+input[type=file]::file-selector-button{
+    background:royalblue;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="topic">
+    <h1>CSS Pseudo Classes & Pseudo Elements Demo</h1>
+</div>
+
+<div class="container">
+
+<!-- Hover -->
+<div class="card">
+<h2>:hover</h2>
+
+<button class="hover-btn">
+Hover Me
+</button>
+
+</div>
+
+
+<!-- Active -->
+<div class="card">
+
+<h2>:active</h2>
+
+<button class="active-btn">
+Click Me
+</button>
+
+</div>
+
+
+<!-- Focus -->
+<div class="card">
+
+<h2>:focus</h2>
+
+<input class="focus-input" placeholder="Click Here">
+
+</div>
+
+
+<!-- Checked -->
+<div class="card">
+
+<h2>:checked</h2>
+
+<label>
+
+<input class="check" type="checkbox">
+
+Accept Terms
+
+</label>
+
+</div>
+
+
+<!-- Disabled -->
+<div class="card">
+
+<h2>:disabled</h2>
+
+<input class="disable" disabled value="Disabled Input">
+
+</div>
+
+
+<!-- Required -->
+<div class="card">
+
+<h2>:required</h2>
+
+<input class="req" required placeholder="Required Field">
+
+</div>
+
+
+<!-- Valid Invalid -->
+<div class="card">
+
+<h2>:valid / :invalid</h2>
+
+<input class="email" type="email" placeholder="Enter Email">
+
+</div>
+
+
+<!-- nth-child -->
+<div class="card">
+
+<h2>:nth-child()</h2>
+
+<ul class="list">
+
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>React</li>
+<li>Python</li>
+
+</ul>
+
+</div>
+
+
+<!-- Target -->
+<div class="card">
+
+<h2>:target</h2>
+
+<a href="#target">Click Here</a>
+
+<div id="target">
+
+I become yellow when targeted.
+
+</div>
+
+</div>
+
+
+<!-- Before -->
+<div class="card">
+
+<h2>::before</h2>
+
+<p class="before">
+
+CSS
+
+</p>
+
+</div>
+
+
+<!-- After -->
+<div class="card">
+
+<h2>::after</h2>
+
+<p class="after">
+
+HTML
+
+</p>
+
+</div>
+
+
+<!-- First Letter -->
+<div class="card">
+
+<h2>::first-letter</h2>
+
+<p class="first-letter">
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+</p>
+
+</div>
+
+
+<!-- First Line -->
+<div class="card">
+
+<h2>::first-line</h2>
+
+<p class="first-line">
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore illo saepe tempora consequatur facere rem maiores perspiciatis.
+
+</p>
+
+</div>
+
+
+<!-- Selection -->
+<div class="card">
+
+<h2>::selection</h2>
+
+<p class="selection">
+
+Select this text with your mouse to see the selection style.
+
+</p>
+
+</div>
+
+
+<!-- Placeholder -->
+<div class="card">
+
+<h2>::placeholder</h2>
+
+<input class="place" placeholder="Type your name">
+
+</div>
+
+
+<!-- Marker -->
+<div class="card">
+
+<h2>::marker</h2>
+
+<ul class="marker">
+
+<li>Apple</li>
+<li>Mango</li>
+<li>Orange</li>
+
+</ul>
+
+</div>
+
+
+<!-- File Selector -->
+<div class="card">
+
+<h2>::file-selector-button</h2>
+
+<input type="file">
+
+</div>
+
+</div>
+
+</body>
+</html>
